@@ -1,10 +1,43 @@
+adsbdec-termux
+====
+
+Run adsbdec in Termux.
+
+<img src="https://github.com/bczhc/adsbdec-termux/assets/49330580/31b9b27f-359d-4764-a5dc-fa8432671c63" style="width: 50%">
+
+# Build
+
+Build it in Termux, to avoid setting up libusb in cross-compilation environments.
+
+```shell
+git clone https://github.com/bczhc/adsbdec-termux
+cd adsbdec-termux
+mkdir build
+cd build
+cmake .. -G Ninja
+ninja
+```
+
+# Run
+
+Connect the Airspy device via USB, and grant the USB permission. Please follow [Termux-usb](https://wiki.termux.com/wiki/Termux-usb).
+
+Then a basic usage is like:
+
+```shell
+termux-usb -e './adsbdec -D' /dev/bus/usb...
+```
+
+----
+
 # Adsbdec
+
 An ADSB open source decoder for the airspy R2
 
 ## Usage 
 > adsbdec [-d] [-c] [-e] [-m] [-g 0-21] [-f filename] [-s addr[:port]]
 
-By default receive samples from airspy and output long adsb frames (DF14/17/18/20/21/24) in raw avr format on stdout
+wBy default receive samples from airspy and output long adsb frames (DF14/17/18/20/21/24) in raw avr format on stdout
 
 ## Options
 	-d : output short frames too
