@@ -10,7 +10,7 @@ Run adsbdec in Termux.
 Build it in Termux, to avoid setting up libusb in cross-compilation environments.
 
 ```shell
-git clone https://github.com/bczhc/adsbdec-termux
+git clone https://github.com/bczhc/adsbdec-termux --recursive
 cd adsbdec-termux
 mkdir build
 cd build
